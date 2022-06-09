@@ -16,6 +16,7 @@
 		11BC256D283E8813005946B7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC256C283E8813005946B7 /* InfoViewController.swift */; };
 		11BC256F283E8821005946B7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC256E283E8821005946B7 /* PostViewController.swift */; };
 		11BC2571283E882C005946B7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC2570283E882C005946B7 /* Post.swift */; };
+		11C909EA283FFE57005F6FE0 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C909E9283FFE57005F6FE0 /* ProfileHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		11BC256C283E8813005946B7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		11BC256E283E8821005946B7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		11BC2570283E882C005946B7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		11C909E9283FFE57005F6FE0 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,17 @@
 				11BC2567283E8786005946B7 /* FeedViewController.swift */,
 				11BC256C283E8813005946B7 /* InfoViewController.swift */,
 				11BC256E283E8821005946B7 /* PostViewController.swift */,
+				11C909E8283FFE22005F6FE0 /* Profile */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11C909E8283FFE22005F6FE0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				11C909E9283FFE57005F6FE0 /* ProfileHeaderView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				11BC2556283E86EB005946B7 /* SceneDelegate.swift in Sources */,
 				11BC2571283E882C005946B7 /* Post.swift in Sources */,
 				11BC256D283E8813005946B7 /* InfoViewController.swift in Sources */,
+				11C909EA283FFE57005F6FE0 /* ProfileHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
