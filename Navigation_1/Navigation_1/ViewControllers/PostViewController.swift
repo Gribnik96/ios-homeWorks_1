@@ -19,8 +19,6 @@ class PostViewController: UIViewController {
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(infoAction))
-        
-        
         setUpView ()
     }
     
