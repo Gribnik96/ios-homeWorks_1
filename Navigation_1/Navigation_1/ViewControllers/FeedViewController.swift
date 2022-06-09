@@ -8,46 +8,84 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
     var post = Post(title: "Мой пост")
-
+    
     var tabBarButton = UIBarButtonItem()
-    var button = UIButton()
+    
+    private lazy var stackView: UIStackView = {
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.backgroundColor = .white
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+        
+    }()
+    
+    var myButton1: UIButton = {
+        
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 15
+        button.setTitle("Перейти на пост", for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    var myButton2: UIButton = {
+        
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 15
+        button.setTitle("Перейти на пост", for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(myButton1)
+        stackView.addArrangedSubview(myButton2)
+        
         view.backgroundColor = .white
         
-        self.button = UIButton(type: .system)
+        NSLayoutConstraint.activate([
+            
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.widthAnchor.constraint(equalToConstant: 250),
+            stackView.heightAnchor.constraint(equalToConstant: 100)
+            
+        ])
         
-        self.button.backgroundColor = .yellow
-        self.button.layer.cornerRadius = 17
-        self.button.clipsToBounds = true
-        self.button.tintColor = .black
-        self.button.setTitle("Перейти на пост", for: .normal)
-        self.view.addSubview(button)
-        self.button.center = self.view.center
-        self.button.translatesAutoresizingMaskIntoConstraints = false
-        self.button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        self.button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    
-        self.button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
- 
         
-
+        
+        
+        
     }
     
     
-         
     
-   
+    
+    
     @objc private func buttonAction() {
-           let postViewController = PostViewController()
+        let postViewController = PostViewController()
         postViewController.titlePost = post.title
-           self.navigationController?.pushViewController(postViewController, animated: true)
-       }
+        self.navigationController?.pushViewController(postViewController, animated: true)
+    }
     
     
     
 }
+
+
+
+
+

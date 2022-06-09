@@ -34,7 +34,6 @@ class PostViewController: UIViewController {
     
     @objc private func infoAction() {
         let infoVC = InfoViewController()
-        //self.navigationController?.pushViewController(infoVC, animated: true)
         infoVC.modalPresentationStyle = .automatic
         self.present(infoVC, animated: true, completion: nil)
     }
