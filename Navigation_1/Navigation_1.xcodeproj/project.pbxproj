@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1183CFA0284E7B1900AD9799 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CF9F284E7B1900AD9799 /* LogInViewController.swift */; };
 		11BC2554283E86EB005946B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC2553283E86EB005946B7 /* AppDelegate.swift */; };
 		11BC2556283E86EB005946B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC2555283E86EB005946B7 /* SceneDelegate.swift */; };
 		11BC255D283E86EC005946B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BC255C283E86EC005946B7 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1183CF9F284E7B1900AD9799 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		11BC2550283E86EB005946B7 /* Navigation_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BC2553283E86EB005946B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11BC2555283E86EB005946B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				11BC2567283E8786005946B7 /* FeedViewController.swift */,
 				11BC256C283E8813005946B7 /* InfoViewController.swift */,
 				11BC256E283E8821005946B7 /* PostViewController.swift */,
+				1183CF9F284E7B1900AD9799 /* LogInViewController.swift */,
 				11C909E8283FFE22005F6FE0 /* Profile */,
 			);
 			path = ViewControllers;
@@ -167,6 +170,7 @@
 			files = (
 				11BC256F283E8821005946B7 /* PostViewController.swift in Sources */,
 				11BC2554283E86EB005946B7 /* AppDelegate.swift in Sources */,
+				1183CFA0284E7B1900AD9799 /* LogInViewController.swift in Sources */,
 				11BC2568283E8786005946B7 /* FeedViewController.swift in Sources */,
 				11BC256A283E8795005946B7 /* ProfileViewController.swift in Sources */,
 				11BC2556283E86EB005946B7 /* SceneDelegate.swift in Sources */,

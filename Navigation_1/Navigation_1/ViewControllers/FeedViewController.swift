@@ -33,6 +33,7 @@ class FeedViewController: UIViewController {
         button.setTitle("Перейти на пост", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
+        
     }()
     
     var myButton2: UIButton = {
@@ -43,18 +44,16 @@ class FeedViewController: UIViewController {
         button.setTitle("Перейти на пост", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
+        
     }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         view.addSubview(stackView)
         stackView.addArrangedSubview(myButton1)
         stackView.addArrangedSubview(myButton2)
-        
-        view.backgroundColor = .white
         
         NSLayoutConstraint.activate([
             
@@ -64,27 +63,16 @@ class FeedViewController: UIViewController {
             stackView.heightAnchor.constraint(equalToConstant: 100)
             
         ])
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
     
     @objc private func buttonAction() {
         let postViewController = PostViewController()
         postViewController.titlePost = post.title
         self.navigationController?.pushViewController(postViewController, animated: true)
+        
     }
     
-    
-    
 }
-
 
 
 

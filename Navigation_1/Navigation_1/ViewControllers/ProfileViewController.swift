@@ -10,6 +10,9 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     
+    
+    let colorSet = CGColor(red: 78, green: 133, blue: 204, alpha: 1)
+    
     private lazy var profileHeaderView: ProfileHeaderView = {
         
         let profileHeaderView = ProfileHeaderView()
@@ -21,7 +24,6 @@ class ProfileViewController: UIViewController {
     var buttonTitle: UIButton = {
         
         let button = UIButton()
-        button.backgroundColor = .blue
         button.backgroundColor = .blue
         button.layer.cornerRadius = 14
         button.clipsToBounds = true
@@ -37,6 +39,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        navigationController?.navigationBar.isHidden = false
         view.backgroundColor = .lightGray
         profileHeaderView.setConstraint()
         view.addSubview(profileHeaderView)
@@ -49,8 +53,7 @@ class ProfileViewController: UIViewController {
             profileHeaderView.leftAnchor.constraint(equalTo: view.leftAnchor),
             profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             profileHeaderView.heightAnchor.constraint(equalToConstant: 220),
-            
-          //  buttonTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400),
+        
             buttonTitle.leftAnchor.constraint(equalTo: view.leftAnchor),
             buttonTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             buttonTitle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -60,27 +63,12 @@ class ProfileViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
-    override func viewWillLayoutSubviews() {
-        
-        super.viewWillLayoutSubviews()
-        
-    }
-    
-    
-    
     @objc func changeTitle() {
-        
         if self.title == "Профиль" {
             self.title = "Аккаунт"
         } else {
             self.title = "Профиль"
         }
-        
-        
     }
     
     
