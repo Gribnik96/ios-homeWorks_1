@@ -53,7 +53,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         textField.backgroundColor = .systemGray6
         textField.autocapitalizationType = .none
         textField.placeholder = "Email or phone"
-        textField.becomeFirstResponder()
+        //textField.becomeFirstResponder()
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
         
