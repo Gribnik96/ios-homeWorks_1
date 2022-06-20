@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ProfileHeaderView: UIView,UITextFieldDelegate {
+class ProfileHeaderView: UITableViewHeaderFooterView {
     
     //MARK: - Создаём UI-обьекты
     
     private var statusText: String = ""
+    
+    let indentifier = "MyView"
     
     lazy var  myImage: UIImageView = {
         
@@ -92,7 +94,16 @@ class ProfileHeaderView: UIView,UITextFieldDelegate {
         
     }()
     
-
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        
+        setConstraint()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 // MARK: - Задаем констрэйнты
     
     
@@ -122,6 +133,8 @@ class ProfileHeaderView: UIView,UITextFieldDelegate {
         myButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
+    
+    
     
     
     // MARK: - Создаем методы для addTarget (логика)
