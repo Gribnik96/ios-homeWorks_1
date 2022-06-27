@@ -114,22 +114,23 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         myImage.widthAnchor.constraint(equalToConstant: 110).isActive = true
         myImage.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
-        myName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 27).isActive = true
+        myName.topAnchor.constraint(equalTo: myImage.topAnchor).isActive = true
         myName.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 175).isActive = true
         
         
-        myLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 75).isActive = true
+        myLabel.topAnchor.constraint(equalTo: myName.bottomAnchor, constant: 25).isActive = true
         myLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 175).isActive = true
         
-        myTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 105).isActive = true
+        myTextField.topAnchor.constraint(equalTo: myLabel.bottomAnchor, constant: 25).isActive = true
         myTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 175).isActive = true
         myTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
         myTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         
-        myButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 155).isActive = true
+        myButton.topAnchor.constraint(equalTo: myTextField.bottomAnchor, constant: 16).isActive = true
         myButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         myButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        myButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -10).isActive = true
         myButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }

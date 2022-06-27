@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1177AEC22860FEDD0068E59F /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177AEC12860FEDD0068E59F /* PhotosTableViewCell.swift */; };
+		1177AEC4286360030068E59F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177AEC3286360030068E59F /* CollectionViewCell.swift */; };
+		1177AEC8286366E90068E59F /* DataPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177AEC7286366E90068E59F /* DataPhoto.swift */; };
+		1177AECA2863BE730068E59F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177AEC92863BE730068E59F /* PhotosViewController.swift */; };
 		1183CFA0284E7B1900AD9799 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CF9F284E7B1900AD9799 /* LogInViewController.swift */; };
 		1195341F2858DFA900662771 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195341E2858DFA900662771 /* PostModel.swift */; };
 		1195342128590A9E00662771 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195342028590A9E00662771 /* PostTableViewCell.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1177AEC12860FEDD0068E59F /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		1177AEC3286360030068E59F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1177AEC7286366E90068E59F /* DataPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPhoto.swift; sourceTree = "<group>"; };
+		1177AEC92863BE730068E59F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		1183CF9F284E7B1900AD9799 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		1195341E2858DFA900662771 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		1195342028590A9E00662771 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -76,8 +84,11 @@
 				11BC2555283E86EB005946B7 /* SceneDelegate.swift */,
 				11BC256B283E87EE005946B7 /* ViewControllers */,
 				1195342028590A9E00662771 /* PostTableViewCell.swift */,
+				1177AEC12860FEDD0068E59F /* PhotosTableViewCell.swift */,
+				1177AEC3286360030068E59F /* CollectionViewCell.swift */,
 				119534222859301C00662771 /* Mock.swift */,
 				1195341E2858DFA900662771 /* PostModel.swift */,
+				1177AEC7286366E90068E59F /* DataPhoto.swift */,
 				11BC2570283E882C005946B7 /* Post.swift */,
 				11BC255C283E86EC005946B7 /* Assets.xcassets */,
 				11BC255E283E86EC005946B7 /* LaunchScreen.storyboard */,
@@ -90,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				11BC2569283E8795005946B7 /* ProfileViewController.swift */,
+				1177AEC92863BE730068E59F /* PhotosViewController.swift */,
 				11BC2567283E8786005946B7 /* FeedViewController.swift */,
 				11BC256C283E8813005946B7 /* InfoViewController.swift */,
 				11BC256E283E8821005946B7 /* PostViewController.swift */,
@@ -178,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11BC256F283E8821005946B7 /* PostViewController.swift in Sources */,
+				1177AECA2863BE730068E59F /* PhotosViewController.swift in Sources */,
 				1195341F2858DFA900662771 /* PostModel.swift in Sources */,
 				11BC2554283E86EB005946B7 /* AppDelegate.swift in Sources */,
 				1195342128590A9E00662771 /* PostTableViewCell.swift in Sources */,
@@ -185,9 +198,12 @@
 				11BC2568283E8786005946B7 /* FeedViewController.swift in Sources */,
 				11BC256A283E8795005946B7 /* ProfileViewController.swift in Sources */,
 				11BC2556283E86EB005946B7 /* SceneDelegate.swift in Sources */,
+				1177AEC22860FEDD0068E59F /* PhotosTableViewCell.swift in Sources */,
 				11BC2571283E882C005946B7 /* Post.swift in Sources */,
+				1177AEC4286360030068E59F /* CollectionViewCell.swift in Sources */,
 				11BC256D283E8813005946B7 /* InfoViewController.swift in Sources */,
 				11C909EA283FFE57005F6FE0 /* ProfileHeaderView.swift in Sources */,
+				1177AEC8286366E90068E59F /* DataPhoto.swift in Sources */,
 				119534232859301C00662771 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
