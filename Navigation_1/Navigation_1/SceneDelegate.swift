@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
+         //   appearance.backgroundColor = .systemGray3
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
@@ -71,6 +72,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createTabBarController() -> UITabBarController {
 
         let tabBarController = UITabBarController()
+        //UITabBar.setColor()
         UITabBar.appearance().backgroundColor = .systemGray3
         tabBarController.viewControllers = [createFeedViewController(),createLogInViewController() ]
         return tabBarController

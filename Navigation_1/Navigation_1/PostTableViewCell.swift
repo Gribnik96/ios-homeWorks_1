@@ -76,6 +76,8 @@ class PostTableViewCell: UITableViewCell {
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(likesLabel)
         contentView.addSubview(viewsLabel)
+    
+        
         
         NSLayoutConstraint.activate([
             
@@ -116,5 +118,5 @@ class PostTableViewCell: UITableViewCell {
     }
     
     
-    
+
 }

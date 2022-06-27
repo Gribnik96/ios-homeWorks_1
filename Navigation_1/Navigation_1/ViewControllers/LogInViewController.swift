@@ -93,9 +93,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = true
+       navigationController?.navigationBar.isHidden = true
         
         view.addSubview(scrollView)
+        
+        view.backgroundColor = .white
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -117,6 +119,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+      
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWillShow(_:)),
@@ -141,12 +145,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         NSLayoutConstraint.activate([
             
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            myLogoImage.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 120),
+            myLogoImage.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 120),
             myLogoImage.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             myLogoImage.widthAnchor.constraint(equalToConstant: 100),
             myLogoImage.heightAnchor.constraint(equalToConstant: 100),
@@ -159,9 +163,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             buttonLogIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
             buttonLogIn.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             buttonLogIn.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            buttonLogIn.heightAnchor.constraint(equalToConstant: 50)
+            buttonLogIn.heightAnchor.constraint(equalToConstant: 50),
+            buttonLogIn.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
             
         ])
+        
+        
         
     }
     
@@ -172,9 +179,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height/2
-            }
+                    if self.view.frame.origin.y == 0 {
+                        self.view.frame.origin.y -= keyboardSize.height
+                    }
+                
         }
     }
     
