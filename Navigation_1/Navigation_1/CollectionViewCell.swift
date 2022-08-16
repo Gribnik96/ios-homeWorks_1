@@ -42,10 +42,6 @@ class CollectionViewCell: UICollectionViewCell {
             myImage.leadingAnchor.constraint(equalTo: leadingAnchor)
             
         ])
-//        layer.cornerRadius = 6
-//        clipsToBounds = true
-//        
-        
     }
     
     func setPhoto(_ photo: UIImage) {
@@ -53,12 +49,4 @@ class CollectionViewCell: UICollectionViewCell {
         myImage.image = photo
         
     }
-    
-//    func setInfo(_ model: CellModel) {
-//        
-//        myImage.image = model.image
-//        
-//    }
-    
-    
 }
