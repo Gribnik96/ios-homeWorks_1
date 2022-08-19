@@ -5,7 +5,16 @@
 //  Created by Nikita Gribin on 26.05.2022.
 //
 
+
+
 import UIKit
+
+
+protocol TapGestureDelegate: AnyObject {
+    
+    func tappedAvatar(to tap: UIImageView? )
+    
+}
 
 class ProfileHeaderView: UITableViewHeaderFooterView {
     
@@ -13,11 +22,13 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     
     private var statusText: String = ""
     
+    var delegete: TapGestureDelegate?
+    
     let indentifier = "MyView"
     
     lazy var  myImage: UIImageView = {
         
-        let image = UIImageView()
+        var image = UIImageView()
         image.frame.size.height = 110
         image.frame.size.width = 110
         image.image = UIImage(named: "Dog")
@@ -25,6 +36,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         image.layer.cornerRadius = image.frame.size.width / 2
         image.layer.borderColor = UIColor.white.cgColor
         image.clipsToBounds = true
+        image.isUserInteractionEnabled = true
         image.translatesAutoresizingMaskIntoConstraints = false
         addSubview(image)
         return image
@@ -96,8 +108,9 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        
+
         setConstraint()
+    
     }
     
     required init?(coder: NSCoder) {
@@ -159,6 +172,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         
     }
     
+   
     
     
     
@@ -173,5 +187,7 @@ extension UITextField {
         self.leftViewMode = .always
     }
 }
+
+
 
 
