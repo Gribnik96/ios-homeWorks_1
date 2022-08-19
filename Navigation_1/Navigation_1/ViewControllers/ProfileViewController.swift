@@ -51,6 +51,12 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if DEBUG
+        tableView.backgroundColor = .blue
+        #else
+        tableView.backgroundColor = .red
+        #endif
       
         view.addSubview(tableView)
         view.addSubview(button)
