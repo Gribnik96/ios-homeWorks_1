@@ -8,8 +8,20 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+
+    private var user: User?
     
-    lazy var tableView: UITableView = {
+    init(user: User) {
+        
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: "MyView")
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -195,16 +207,21 @@ extension ProfileViewController:  UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        if section == 0 {
-            guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MyView") as? ProfileHeaderView else { return nil }
-            headerView.delegete = self
-            tappedAvatar(to: headerView.myImage)
-            return headerView
-        }
-        return nil
+        guard
+            section == 0,
+            let headerView = tableView.dequeueReusableHeaderFooterView(
+                withIdentifier: "MyView"
+            ) as? ProfileHeaderView,
+            let user = user
+        else { return nil }
+        headerView.delegete = self
+        headerView.configure(user)
+        tappedAvatar(to: headerView.myImage)
+        return headerView
     }
 }
+        
+       
 
 extension ProfileViewController: TapGestureDelegate {
     func tappedAvatar(to tap: UIImageView?) {

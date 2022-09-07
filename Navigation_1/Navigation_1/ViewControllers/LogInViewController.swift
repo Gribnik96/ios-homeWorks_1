@@ -9,6 +9,17 @@ import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
     
+    private let userService: UserService
+    
+    init(userService: UserService) {
+        self.userService = userService
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let scrollView: UIScrollView = {
         
@@ -93,7 +104,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
         
         view.addSubview(scrollView)
         
@@ -111,16 +122,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         setConstraints()
         setupGestures()
-        
-       
-        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-      
+        
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWillShow(_:)),
@@ -179,10 +186,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                    if self.view.frame.origin.y == 0 {
-                        self.view.frame.origin.y -= keyboardSize.height
-                    }
-                
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+            
         }
     }
     
@@ -193,9 +200,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func presentView() {
-        let viewController = ProfileViewController()
-        passwordTextField.resignFirstResponder()
-        emailTextField.resignFirstResponder()
+        guard let user = userService.getUserBy(emailTextField.text ?? "", passwordTextField.text!) else { return }
+        let viewController = ProfileViewController(user: user)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

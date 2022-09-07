@@ -20,7 +20,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     
     private var statusText: String = ""
     
-    var delegete: TapGestureDelegate?
+    weak var delegete: TapGestureDelegate?
     
     let indentifier = "MyView"
     
@@ -79,6 +79,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         textField.indent(size: 10)
         textField.addTarget(self, action: #selector(statusTextChanged), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
+      textField.autocorrectionType = .no
         addSubview(textField)
         return textField
         
@@ -149,6 +150,12 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
             button.bottom.equalToSuperview().inset(10)
             button.height.equalTo(50)
         }
+    }
+    
+    func configure(_ user: User) {
+        myImage.image = user.avatar
+        myName.text = user.userName
+        myLabel.text = user.status
     }
     
     // MARK: - Создаем методы для addTarget (логика)
