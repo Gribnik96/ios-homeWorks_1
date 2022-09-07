@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         #if DEBUG
-        tableView.backgroundColor = .blue
+        tableView.backgroundColor = .white
         #else
         tableView.backgroundColor = .red
         #endif

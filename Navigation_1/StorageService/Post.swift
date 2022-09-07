@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 public struct Post {
    public  var title: String
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import iOSIntPackage
 
 class PostTableViewCell: UITableViewCell {
     
@@ -109,11 +110,15 @@ class PostTableViewCell: UITableViewCell {
     func setInfo(_ model: Model) {
         
         titleLabel.text = model.author
-        image.image = UIImage(named: model.image)
+      //  image.image = UIImage(named: model.image)
+        if let imageFilter = UIImage(named: model.image) {
+            let filter = ColorFilter.sepia(intensity: 2)
+            ImageProcessor().processImage(sourceImage: imageFilter, filter: filter) { image.image = $0 }
+            
+        }
         descriptionLabel.text = model.description
         viewsLabel.text = "Views: \(String(model.views))"
         likesLabel.text = "Likes: \(String(model.likes))"
-        
         
     }
     

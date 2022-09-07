@@ -8,12 +8,10 @@
 
 
 import UIKit
-
+import SnapKit
 
 protocol TapGestureDelegate: AnyObject {
-    
     func tappedAvatar(to tap: UIImageView? )
-    
 }
 
 class ProfileHeaderView: UITableViewHeaderFooterView {
@@ -118,68 +116,56 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     }
     
 // MARK: - Задаем констрэйнты
-    
-    
+
     func setConstraint() {
+
+        myImage.snp.makeConstraints { image in
+            image.top.leading.equalToSuperview().inset(16)
+            image.width.equalTo(110)
+            image.height.equalTo(110)
+        }
         
-        myImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        myImage.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        myImage.widthAnchor.constraint(equalToConstant: 110).isActive = true
-        myImage.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        myName.snp.makeConstraints { label in
+            label.top.equalTo(myImage)
+            label.leading.equalTo(175)
+        }
         
-        myName.topAnchor.constraint(equalTo: myImage.topAnchor).isActive = true
-        myName.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 175).isActive = true
+        myLabel.snp.makeConstraints { label in
+            label.top.equalTo(myImage).inset(25)
+            label.leading.equalToSuperview().inset(175)
+        }
         
+        myTextField.snp.makeConstraints { textField in
+            textField.top.equalTo(myLabel).inset(25)
+            textField.leading.equalToSuperview().inset(175)
+            textField.width.equalTo(200)
+            textField.height.equalTo(40)
+        }
         
-        myLabel.topAnchor.constraint(equalTo: myName.bottomAnchor, constant: 25).isActive = true
-        myLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 175).isActive = true
-        
-        myTextField.topAnchor.constraint(equalTo: myLabel.bottomAnchor, constant: 25).isActive = true
-        myTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 175).isActive = true
-        myTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        myTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        
-        myButton.topAnchor.constraint(equalTo: myTextField.bottomAnchor, constant: 16).isActive = true
-        myButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        myButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
-        myButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -10).isActive = true
-        myButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
+        myButton.snp.makeConstraints { button in
+            button.top.equalTo(myTextField).inset(60)
+            button.leading.equalToSuperview().inset(16)
+            button.trailing.equalToSuperview().inset(16)
+            button.bottom.equalToSuperview().inset(10)
+            button.height.equalTo(50)
+        }
     }
-    
-    
-    
     
     // MARK: - Создаем методы для addTarget (логика)
     
     @objc func statusTextChanged(_ textField: UITextField) {
-        
         statusText = textField.text ?? "Error"
         print(statusText)
-        
     }
     
-    
     @objc func buttonPressed(_ button: UIButton) {
-        
-    
         myLabel.text = statusText
         myTextField.endEditing(true)
         myTextField.resignFirstResponder()
         myTextField.text = nil
         print(myLabel.text ?? "Nil")
-        
     }
-    
-   
-    
-    
-    
-    
 }
-
-
 
 extension UITextField {
     func indent(size:CGFloat) {
